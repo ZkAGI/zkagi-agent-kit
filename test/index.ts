@@ -12,7 +12,7 @@ dotenv.config();
 
 function validateEnvironment(): void {
   const missingVars: string[] = [];
-  const requiredVars = ["RPC_URL", "SOLANA_PRIVATE_KEY", "ZKAGI_API_KEY"];
+  const requiredVars = ["ZKAGI_API_KEY", "RPC_URL", "SOLANA_PRIVATE_KEY"];
 
   requiredVars.forEach(varName => {
     if (!process.env[varName]) {
@@ -33,22 +33,16 @@ validateEnvironment();
 
 const WALLET_DATA_FILE = "wallet_data.txt";
 
-// Extend ChatOpenAIFields to include baseURL
-interface ExtendedChatOpenAIFields {
-  modelName: string;
-  baseURL?: string;
-  api_key?: string;
-  temperature?: number;
-}
-
 async function initializeAgent() {
   try {
     const llm = new ChatOpenAI({
       modelName: "open-mistral-nemo",
-      baseURL: process.env.ZKAGI_TEXT_URL,
-      api_key: process.env.ZKAGI_API_KEY,
+      configuration: {
+        baseURL: process.env.ZKAGI_TEXT_URL || "",
+      },
+      apiKey: process.env.ZKAGI_API_KEY|| "",
       temperature: 0.7,
-    } as ExtendedChatOpenAIFields); // Cast to ExtendedChatOpenAIFields
+    });
 
     let walletDataStr: string | null = null;
 
@@ -63,7 +57,7 @@ async function initializeAgent() {
     const solanaKit = new SolanaAgentKit(
       process.env.SOLANA_PRIVATE_KEY!,
       process.env.RPC_URL,
-      process.env.ZKAGI_API_KEY || "DdcGRKnBET55js4ruWpCPoXDs0KJ30Ka"
+      process.env.ZKAGI_API_KEY!
     );
 
     const tools = createSolanaTools(solanaKit);
@@ -106,10 +100,7 @@ async function runAutonomousMode(agent: any, config: any, interval = 10) {
         "Be creative and do something interesting on the blockchain. " +
         "Choose an action or set of actions and execute it that highlights your abilities.";
 
-      const stream = await agent.stream(
-        { messages: [new HumanMessage(thought)] },
-        config
-      );
+      const stream = await agent.stream({ messages: [new HumanMessage(thought)] }, config);
 
       for await (const chunk of stream) {
         if ("agent" in chunk) {
@@ -149,10 +140,7 @@ async function runChatMode(agent: any, config: any) {
         break;
       }
 
-      const stream = await agent.stream(
-        { messages: [new HumanMessage(userInput)] },
-        config
-      );
+      const stream = await agent.stream({ messages: [new HumanMessage(userInput)] }, config);
 
       for await (const chunk of stream) {
         if ("agent" in chunk) {
