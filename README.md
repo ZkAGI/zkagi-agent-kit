@@ -2,7 +2,7 @@
 
 # ZkAGI x Solana Agent Kit
 
-A forked and modified version of the Solana Agent Kit to support verifiable & decentralized AI powers to agents using Solana Agent Kit 
+An upgrade to the Solana Agent Kit to support verifiable & decentralized AI powers in Agents
 
 - ZkAGI x Solana Agent Kit is the all batteries loaded agent building framework 
 - ZkAGI becomes the first to integrate a decentralized API alternative to Open AI on Solana Agent Kit
