@@ -10,6 +10,10 @@ A forked and modified version of the Solana Agent Kit to support verifiable & de
 - Operate Agents with proof of sentience (Zk proofs to verify AI output and the AI having a “mind” of its own) 
 - Integrate and expand with Eliza & other agentic frameworks to craft the agent of your dreams
 
+Watch Demo: https://drive.google.com/drive/folders/1Zv8wiIxJ8a9ffNroIeFGTK8q_mhskEDe
+
+Read the code, and direct any bugs/vulnerabilities or suggestions to core@zkagi.ai
+
 </div>
 
 
