@@ -1,12 +1,19 @@
 <div align="center">
 
-# Solana Agent Kit
+# ZkAGI x Solana Agent Kit
+
+A forked and modified version of the Solana Agent Kit to support verifiable & decentralized AI powers to agents using Solana Agent Kit 
+
+- ZkAGI x Solana Agent Kit is the all batteries loaded agent building framework 
+- ZkAGI becomes the first to integrate a decentralized API alternative to Open AI on Solana Agent Kit
+- Now, you can integrate the widest selection of open source AI models and LLMs 
+- Operate Agents with proof of sentience (Zk proofs to verify AI output and the AI having a “mind” of its own) 
+- Integrate and expand with Eliza & other agentic frameworks to craft the agent of your dreams
 
 </div>
 
-![Solana Agent Kit Cover 1 (3)](https://github.com/user-attachments/assets/cfa380f6-79d9-474d-9852-3e1976c6de70)
 
-An open-source toolkit for connecting AI agents to Solana protocols. Now, any agent, using any model can autonomously perform 15+ Solana actions:
+Solana Agent Kit is an open-source toolkit for connecting AI agents to Solana protocols - ZkAGI x Solana Agent Kit allows you to leverage open source AI models with Proof of Sentience (zk-verifiability). Now, any agent, using any model can autonomously perform 15+ Solana actions:
 
 - Trade tokens
 - Launch new tokens 
