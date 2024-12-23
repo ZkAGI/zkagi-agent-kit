@@ -49,7 +49,7 @@ export class SolanaAgentKit {
 
   constructor(
     private_key: string,
-    rpc_url = "https://api.mainnet-beta.solana.com",
+    rpc_url = "https://api.testnet.solana.com",
     // openai_api_key: string,
     zkagi_api_key: string,
   ) {
