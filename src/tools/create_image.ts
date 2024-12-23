@@ -63,9 +63,7 @@ export async function create_image(
     console.log(`Image saved to ${imagePath}`);
 
     return {
-      buffer,
-      imagePath,
-      images: [imagePath] // For compatibility with original function's return format
+      images: imagePath // For compatibility with original function's return format
     };
   } catch (error: any) {
     console.error('Error generating image:', error);
