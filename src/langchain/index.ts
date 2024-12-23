@@ -497,7 +497,7 @@ export class SolanaPumpfunTokenLaunchTool extends Tool {
 export class SolanaCreateImageTool extends Tool {
   name = "solana_create_image";
   description =
-    "Create an image using OpenAI's DALL-E. Input should be a string prompt for the image.";
+    "Create an image using Zynapse Image-Gen. Input should be a string prompt for the image.";
 
   constructor(private solanaKit: SolanaAgentKit) {
     super();

@@ -140,15 +140,43 @@ async function runChatMode(agent: any, config: any) {
         break;
       }
 
-      const stream = await agent.stream({ messages: [new HumanMessage(userInput)] }, config);
+      try {
+        // Step 1: Generate Keys
+        console.log("Step 1: Generating keys...");
+        const keys = await generateKeys();
+        console.log("Keys:", keys);
 
-      for await (const chunk of stream) {
-        if ("agent" in chunk) {
-          console.log(chunk.agent.messages[0].content);
-        } else if ("tools" in chunk) {
-          console.log(chunk.tools.messages[0].content);
+        // Step 2: Generate Proof
+        console.log("Step 2: Generating proof...");
+        const proofResponse = await generateProof(userInput);
+        console.log("Proof Generated:", proofResponse);
+
+        // Step 3: Verify Proof
+        console.log("Step 3: Verifying proof...");
+        const verificationResponse = await verifyProof(proofResponse.proof);
+        console.log("Verification status:", verificationResponse.status);
+        if (verificationResponse.status === "Proof verification successful") {
+          console.log("Proof verified successfully. Passing prompt to the agent...");
+
+          // Pass the prompt to the agent
+          const stream = await agent.stream(
+            { messages: [new HumanMessage(userInput)] },
+            config
+          );
+
+          for await (const chunk of stream) {
+            if ("agent" in chunk) {
+              console.log(chunk.agent.messages[0].content);
+            } else if ("tools" in chunk) {
+              console.log(chunk.tools.messages[0].content);
+            }
+            console.log("-------------------");
+          }
+        } else {
+          console.error("Proof verification failed. Try again.");
         }
-        console.log("-------------------");
+      } catch (proofError) {
+        console.error("Error during proof generation or verification:", proofError);
       }
     }
   } catch (error) {
@@ -160,6 +188,8 @@ async function runChatMode(agent: any, config: any) {
     rl.close();
   }
 }
+
+
 
 async function chooseMode(): Promise<"chat" | "auto"> {
   const rl = readline.createInterface({
@@ -189,6 +219,51 @@ async function chooseMode(): Promise<"chat" | "auto"> {
     console.log("Invalid choice. Please try again.");
   }
 }
+
+async function generateKeys() {
+  console.log('Generating keys...');
+  const response = await fetch(`${process.env.ZK_URL}/generate-keys`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'api-key': `${process.env.ZK_API}` } });
+  if (!response.ok) {
+      throw new Error('Failed to generate keys');
+  }
+  const result = await response.json();
+  console.log('Keys generated successfully:', result);
+  return result;
+}
+
+async function generateProof(text: string) {
+  const limitedText = text.substring(0, 500);
+  const response = await fetch(`${process.env.ZK_URL}/generate-proof`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'api-key': `${process.env.ZK_API}` },
+      body: JSON.stringify({ text: limitedText }),
+  });
+  if (!response.ok) {
+      throw new Error('Failed to generate proof');
+  }
+  const result = await response.json();
+  console.log('Proof generated successfully:', result);
+  return result;
+}
+
+
+
+
+async function verifyProof(proof: string) {
+  console.log('Verifying proof:', proof);
+  const response = await fetch(`${process.env.ZK_URL}/verify-proof`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'api-key': `${process.env.ZK_API}` },
+      body: JSON.stringify({ proof }),
+  });
+  if (!response.ok) {
+      throw new Error('Failed to verify proof');
+  }
+  const result = await response.json();
+  console.log('Proof verified successfully:', result);
+  return result;
+}
+
 
 async function main() {
   try {
