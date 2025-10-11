@@ -4,81 +4,88 @@
 
 An upgrade to the Solana Agent Kit to support verifiable & decentralized AI powers in Agents
 
-- ZkAGI x Solana Agent Kit is the all batteries loaded agent building framework 
-- ZkAGI becomes the first to integrate a decentralized API alternative to Open AI on Solana Agent Kit
-- Now, you can integrate the widest selection of open source AI models and LLMs 
-- Operate Agents with proof of sentience (Zk proofs to verify AI output and the AI having a “mind” of its own) 
-- Integrate and expand with Eliza & other agentic frameworks to craft the agent of your dreams
+* ZkAGI x Solana Agent Kit is the all batteries loaded agent building framework
+* ZkAGI becomes the first to integrate a decentralized API alternative to Open AI on Solana Agent Kit
+* Now, you can integrate the widest selection of open source AI models and LLMs
+* Operate Agents with proof of sentience (Zk proofs to verify AI output and the AI having a “mind” of its own)
+* Integrate and expand with Eliza & other agentic frameworks to craft the agent of your dreams
 
-Watch Demo: https://drive.google.com/drive/folders/1Zv8wiIxJ8a9ffNroIeFGTK8q_mhskEDe
+Watch Demo: [https://drive.google.com/drive/folders/1Zv8wiIxJ8a9ffNroIeFGTK8q_mhskEDe](https://drive.google.com/drive/folders/1Zv8wiIxJ8a9ffNroIeFGTK8q_mhskEDe)
 
-Read the code, and direct any bugs/vulnerabilities or suggestions to core@zkagi.ai
+Read the code, and direct any bugs/vulnerabilities or suggestions to [core@zkagi.ai](mailto:core@zkagi.ai)
 
 </div>
 
+---
 
 Solana Agent Kit is an open-source toolkit for connecting AI agents to Solana protocols - ZkAGI x Solana Agent Kit allows you to leverage open source AI models with Proof of Sentience (zk-verifiability). Now, any agent, using any model can autonomously perform 15+ Solana actions:
 
-- Trade tokens
-- Launch new tokens 
-- Lend assets
-- Send compressed airdrops
-- Execute blinks
-- Launch tokens on AMMs
-- And more...
+* Trade tokens
+* Launch new tokens
+* Lend assets
+* Send compressed airdrops
+* Execute blinks
+* Launch tokens on AMMs
+* And more...
 
 Anyone - whether an SF-based AI researcher or a crypto-native builder - can bring their AI agents trained with any model and seamlessly integrate with Solana.
 
 ## 🔧 Core Blockchain Features
 
-- **Token Operations**
-  - Deploy SPL tokens by Metaplex
-  - Transfer assets
-  - Balance checks
-  - Stake SOL
-  - Zk compressed Airdrop by Light Protocol and Helius
+* **Token Operations**
 
-- **NFT Management via Metaplex**
-  - Collection deployment
-  - NFT minting
-  - Metadata management
-  - Royalty configuration
+  * Deploy SPL tokens by Metaplex
+  * Transfer assets
+  * Balance checks
+  * Stake SOL
+  * Zk compressed Airdrop by Light Protocol and Helius
 
-- **DeFi Integration**
-  - Jupiter Exchange swaps
-  - Launch on Pump via PumpPortal
-  - Raydium pool creation (CPMM, CLMM, AMMv4)
-  - Orca whirlpool integration
-  - Meteora Dynamic AMM, DLMM Pool, and Alpga Vault
-  - Openbook market creation
-  - Register and Resolve SNS
-  - Jito Bundles
+* **NFT Management via Metaplex**
 
-- **Solana Blinks**
-   - Lending by Lulo
-   - Send Arcade Games
-   - JupSOL staking
+  * Collection deployment
+  * NFT minting
+  * Metadata management
+  * Royalty configuration
 
+* **DeFi Integration**
+
+  * Jupiter Exchange swaps
+  * Launch on Pump via PumpPortal
+  * Raydium pool creation (CPMM, CLMM, AMMv4)
+  * Orca whirlpool integration
+  * Meteora Dynamic AMM, DLMM Pool, and Alpga Vault
+  * Openbook market creation
+  * Register and Resolve SNS
+  * Jito Bundles
+
+* **Solana Blinks**
+
+  * Lending by Lulo
+  * Send Arcade Games
+  * JupSOL staking
 
 ## 🤖 AI Integration Features
 
-- **LangChain Integration**
-  - Ready-to-use LangChain tools for blockchain operations
-  - Autonomous agent support with React framework
-  - Memory management for persistent interactions
-  - Streaming responses for real-time feedback
+* **LangChain Integration**
 
-- **Autonomous Modes**
-  - Interactive chat mode for guided operations
-  - Autonomous mode for independent agent actions
-  - Configurable action intervals
-  - Built-in error handling and recovery
+  * Ready-to-use LangChain tools for blockchain operations
+  * Autonomous agent support with React framework
+  * Memory management for persistent interactions
+  * Streaming responses for real-time feedback
 
-- **AI Tools**
-  - DALL-E integration for NFT artwork generation
-  - Natural language processing for blockchain commands
-  - Price feed integration for market analysis
-  - Automated decision-making capabilities
+* **Autonomous Modes**
+
+  * Interactive chat mode for guided operations
+  * Autonomous mode for independent agent actions
+  * Configurable action intervals
+  * Built-in error handling and recovery
+
+* **AI Tools**
+
+  * DALL-E integration for NFT artwork generation
+  * Natural language processing for blockchain commands
+  * Price feed integration for market analysis
+  * Automated decision-making capabilities
 
 ## 📦 Installation
 
@@ -231,6 +238,27 @@ const price = await pythFetchPrice(
 console.log("Price in BTC/USD:", price);
 ```
 
+## 🔒 PrivacyCash SDK Integration
+
+> **New Addition: Privacy-Preserving Transactions for Agents**
+
+The **PrivacyCash SDK** enables private deposits, withdrawals, and balance checks directly from your Solana Agent Kit agents. This is a crucial upgrade for developers who want their agents to handle funds securely and anonymously.
+
+### ✨ Why it Matters for Agents
+
+* **Confidential Treasury Management** – Agents can hold funds without leaking wallet activity to competitors.
+* **Unlinkable Payouts** – Agents can pay out or move assets without exposing the funding source.
+* **Stealth Strategies** – Trading agents can operate without revealing transaction footprints.
+
+
+### 🔑 Key SDK APIs
+
+* `deposit()` – Move SOL into private UTXOs.
+* `withdraw()` – Send SOL privately to any address.
+* `getPrivateBalance()` – Check shielded balance.
+
+This unlocks **autonomous, privacy-preserving, and verifiable AI agents** on Solana.
+
 ## API Reference
 
 ### Core Functions
@@ -279,14 +307,15 @@ Fetch price data from Pyth's Hermes service.
 
 The toolkit relies on several key Solana and Metaplex libraries:
 
-- @solana/web3.js
-- @solana/spl-token
-- @metaplex-foundation/mpl-token-metadata
-- @metaplex-foundation/mpl-core
-- @metaplex-foundation/umi
-- @lightprotocol/compressed-token
-- @lightprotocol/stateless.js
-- @pythnetwork/price-service-client
+* @solana/web3.js
+* @solana/spl-token
+* @metaplex-foundation/mpl-token-metadata
+* @metaplex-foundation/mpl-core
+* @metaplex-foundation/umi
+* @lightprotocol/compressed-token
+* @lightprotocol/stateless.js
+* @pythnetwork/price-service-client
+* **privacycash** (for private deposits, withdrawals, balances)
 
 ## Contributing
 
@@ -300,3 +329,6 @@ MIT License
 ## Security
 
 This toolkit handles private keys and transactions. Always ensure you're using it in a secure environment and never share your private keys.
+
+With PrivacyCash SDK, you can now also handle funds with **confidentiality and verifiability**, empowering the next generation of autonomous agents.
+
