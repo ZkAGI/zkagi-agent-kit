@@ -18,7 +18,7 @@ Read the code, and direct any bugs/vulnerabilities or suggestions to [core@zkagi
 
 ---
 
-## 🔒 PrivacyCash SDK Integration
+## 🔒 PrivacyCash SDK Integration *(New Update)*
 
 > **New Addition: Privacy-Preserving Transactions for Agents**
 
@@ -30,7 +30,6 @@ The **PrivacyCash SDK** enables private deposits, withdrawals, and balance check
 * **Unlinkable Payouts** – Agents can pay out or move assets without exposing the funding source.
 * **Stealth Strategies** – Trading agents can operate without revealing transaction footprints.
 
-
 ### 🔑 Key SDK APIs
 
 * `deposit()` – Move SOL into private UTXOs.
@@ -39,17 +38,14 @@ The **PrivacyCash SDK** enables private deposits, withdrawals, and balance check
 
 This unlocks **autonomous, privacy-preserving, and verifiable AI agents** on Solana.
 
-Solana Agent Kit is an open-source toolkit for connecting AI agents to Solana protocols - ZkAGI x Solana Agent Kit allows you to leverage open source AI models with Proof of Sentience (zk-verifiability). Now, any agent, using any model can autonomously perform 15+ Solana actions:
+### 🔮 Future Scopes
 
-* Trade tokens
-* Launch new tokens
-* Lend assets
-* Send compressed airdrops
-* Execute blinks
-* Launch tokens on AMMs
-* And more...
+* **Cross-chain Privacy Bridges** – Integrate private transactions across Ethereum, Aptos, and more.
+* **Programmable Privacy** – Agents define rules on when and how funds are revealed.
+* **DAO Treasury Privacy** – Private management for collective governance funds.
+* **Agent-to-Agent Payments** – Direct peer-to-peer confidential payments between AI agents.
 
-Anyone - whether an SF-based AI researcher or a crypto-native builder - can bring their AI agents trained with any model and seamlessly integrate with Solana.
+---
 
 ## 🔧 Core Blockchain Features
 
@@ -331,4 +327,3 @@ MIT License
 This toolkit handles private keys and transactions. Always ensure you're using it in a secure environment and never share your private keys.
 
 With PrivacyCash SDK, you can now also handle funds with **confidentiality and verifiability**, empowering the next generation of autonomous agents.
-
