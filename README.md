@@ -18,6 +18,27 @@ Read the code, and direct any bugs/vulnerabilities or suggestions to [core@zkagi
 
 ---
 
+## 🔒 PrivacyCash SDK Integration
+
+> **New Addition: Privacy-Preserving Transactions for Agents**
+
+The **PrivacyCash SDK** enables private deposits, withdrawals, and balance checks directly from your Solana Agent Kit agents. This is a crucial upgrade for developers who want their agents to handle funds securely and anonymously.
+
+### ✨ Why it Matters for Agents
+
+* **Confidential Treasury Management** – Agents can hold funds without leaking wallet activity to competitors.
+* **Unlinkable Payouts** – Agents can pay out or move assets without exposing the funding source.
+* **Stealth Strategies** – Trading agents can operate without revealing transaction footprints.
+
+
+### 🔑 Key SDK APIs
+
+* `deposit()` – Move SOL into private UTXOs.
+* `withdraw()` – Send SOL privately to any address.
+* `getPrivateBalance()` – Check shielded balance.
+
+This unlocks **autonomous, privacy-preserving, and verifiable AI agents** on Solana.
+
 Solana Agent Kit is an open-source toolkit for connecting AI agents to Solana protocols - ZkAGI x Solana Agent Kit allows you to leverage open source AI models with Proof of Sentience (zk-verifiability). Now, any agent, using any model can autonomously perform 15+ Solana actions:
 
 * Trade tokens
@@ -237,27 +258,6 @@ const price = await pythFetchPrice(
 
 console.log("Price in BTC/USD:", price);
 ```
-
-## 🔒 PrivacyCash SDK Integration
-
-> **New Addition: Privacy-Preserving Transactions for Agents**
-
-The **PrivacyCash SDK** enables private deposits, withdrawals, and balance checks directly from your Solana Agent Kit agents. This is a crucial upgrade for developers who want their agents to handle funds securely and anonymously.
-
-### ✨ Why it Matters for Agents
-
-* **Confidential Treasury Management** – Agents can hold funds without leaking wallet activity to competitors.
-* **Unlinkable Payouts** – Agents can pay out or move assets without exposing the funding source.
-* **Stealth Strategies** – Trading agents can operate without revealing transaction footprints.
-
-
-### 🔑 Key SDK APIs
-
-* `deposit()` – Move SOL into private UTXOs.
-* `withdraw()` – Send SOL privately to any address.
-* `getPrivateBalance()` – Check shielded balance.
-
-This unlocks **autonomous, privacy-preserving, and verifiable AI agents** on Solana.
 
 ## API Reference
 
